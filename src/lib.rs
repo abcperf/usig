@@ -3,6 +3,7 @@ pub mod noop;
 pub mod signature;
 pub mod test;
 
+use core::fmt;
 use std::{
     fmt::Debug,
     ops::{Add, AddAssign},
@@ -18,6 +19,12 @@ use thiserror::Error;
     Serialize, Deserialize, Debug, Clone, Copy, Ord, Eq, PartialEq, PartialOrd, Default, Hash,
 )]
 pub struct Count(pub u64);
+
+impl fmt::Display for Count {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({0})", self.0)
+    }
+}
 
 #[derive(Error, Debug)]
 pub enum UsigError {
