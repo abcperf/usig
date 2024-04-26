@@ -113,15 +113,13 @@ impl Usig for UsigNoOp {
 mod tests {
     use std::sync::atomic::{AtomicUsize, Ordering};
 
-    use shared_ids::AnyId;
-
     use super::*;
 
     type Bin = &'static [u8];
 
     const MESSAGE_1: Bin = b"message one";
     const MESSAGE_2: Bin = b"message two";
-    const ID: ReplicaId = ReplicaId::FIRST;
+    const ID: ReplicaId = ReplicaId::first();
 
     fn new_usig() -> UsigNoOp {
         UsigNoOp::default()

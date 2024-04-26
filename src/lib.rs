@@ -9,7 +9,7 @@ use std::{
 };
 
 use serde::{Deserialize, Serialize};
-pub use shared_ids::{AnyId, ReplicaId};
+pub use shared_ids::ReplicaId;
 use thiserror::Error;
 
 /// A USIG signature counter value
