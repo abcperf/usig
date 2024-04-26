@@ -2,14 +2,14 @@
 macro_rules! tests {
     ($new_usig:expr) => {
         use usig::{
-            AnyId as _, Counter as _, ReplicaId, SignHalf as _, Usig as _, UsigError,
+            Counter as _, ReplicaId, SignHalf as _, Usig as _, UsigError,
             VerifyHalf as _,
         };
 
         const MESSAGE_EMPTY: &'static [u8] = b"";
         const MESSAGE_1: &'static [u8] = b"message one";
         const MESSAGE_2: &'static [u8] = b"message two";
-        const ID: ReplicaId = ReplicaId::FIRST;
+        const ID: ReplicaId = ReplicaId::first();
 
         #[test]
         fn as_ref() {
